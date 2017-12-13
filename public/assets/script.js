@@ -227,9 +227,9 @@ function initObject() {
 	var loader = new THREE.TextureLoader();
 	var texture = loader.load('./public/img/italy.jpg');
 
-	var material = new THREE.MeshBasicMaterial({ color: 0xafeeee, side: THREE.DoubleSide, specular: 0xffffff, shininess: 250 });
+	//var material = new THREE.MeshBasicMaterial({ color: 0xafeeee,  side: THREE.DoubleSide, specular: 0xffffff, shininess: 250 });
 	//var material = new THREE.MeshBasicMaterial({ map: texture,  side: THREE.DoubleSide});
-	texture.minFilter = THREE.LinearFilter;
+	//texture.minFilter = THREE.LinearFilter;
 	//立方体オブジェクトの生成
 	lattice = new THREE.Mesh(geometry, material);
 
@@ -302,7 +302,7 @@ function loop() {
 		}
 	}
 
-	lattice.geometry.vertices = [];
+	//lattice.geometry.vertices = [];
 
 	var a = 0;
 	for (i = 0; i <= N; i++) {
@@ -311,7 +311,6 @@ function loop() {
 			var y = (-N / 2 + j) * l;
 			var z = f[1][i][j];
 			//頂点座標データの追加
-			console.log(lattice.geometry.vertices);
 			lattice.geometry.vertices[a].z = z;
 			a++;
 		}
